@@ -45,12 +45,12 @@ public class ProductService implements com.oex.ecommerce.service.definition.Prod
     }
 
     @Override
-    public List<Product> listProductByProductType(ProductType productType) {
-        return null;
+    public List<ProductData> listProductByProductType(String productType) {
+        return productStockStatsRepository.getAllProductByProductType(productType).stream().map(productStockStats -> new ProductData(productStockStats.getProduct().getProductName(), productStockStats.getProduct().getProductDescription(), productStockStats.getProduct().getProductType().getProductType(), productStockStats.getProductQuantity())).toList();
     }
 
     @Override
-    public List<Product> listAllProducts(ProductType productType) {
-        return null;
+    public List<ProductData> listAllProducts() {
+        return productStockStatsRepository.getAllProducts().stream().map(productStockStats -> new ProductData(productStockStats.getProduct().getProductName(), productStockStats.getProduct().getProductDescription(), productStockStats.getProduct().getProductType().getProductType(), productStockStats.getProductQuantity())).toList();
     }
 }

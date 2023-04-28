@@ -1,0 +1,28 @@
+PRACTICAL
+Please make use of Exception, Spring boot annotations as much as you can. Try to follow a proper project structure.
+
+AIM:  Create a Spring Boot application for an eCommerce portal, where you have to manage Stock, product, and Order.
+
+Goal: 1. Implement a ProducService, Product service would keep stock of all the products, creating products, deleting, and get details of products. Define entities like a name, description, product type, and quantity.
+
+Sample Interface: Public interface ProductService {
+public void addProduct(ProductType product, int quantity);
+public void reduceProduct(ProductType product, int quantity);
+public List listProduct(ProductType product); }
+
+2. Implement OrderService, which should provide order service of any product, User should be able to see and order it. Define entities like order detail.
+
+3. Once an order is placed then product quantity should be reduced.
+
+4. Implement UserService for the portal, there could be different types of users like a customer, seller, and admin user. Define entities like the user, user type, address, etc.
+
+5. User should be able to make a new order and view the order history.
+
+Note*
+Create column names using camelCase, like : productType, productName
+And in API Call, request body should have fields in snake_case like : product_name, product_description
+
+
+
+one person can have multiple orders and multiple quantities of the order
+
