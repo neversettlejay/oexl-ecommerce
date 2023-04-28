@@ -13,8 +13,8 @@ public interface ProductService {
 
     public void reduceProduct(ProductData product, int quantity);
 
-    public List<Product> listProductByProductType(ProductType productType);
-    public List<Product> listAllProducts(ProductType productType);
+    public List<ProductData> listProductByProductType(String productType);
+    public List<ProductData> listAllProducts();
 
 
 }
